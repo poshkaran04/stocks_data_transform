@@ -1,0 +1,27 @@
+
+version: 2
+
+
+sources:
+  - name: us_stocks
+    description: This is an extracted dataset from Big Query (Originally fetched from Kaggle) of all the usa stocks that have gone public. Aim is to eveluate stock data permormance over the span of 10 Years.
+    database: data-bootcamp-380922
+    schema: us_stocks
+    tables:
+      - name: stocks_data_usa_partitioned
+        description: This is the finalized table which will be productionalized in Data Warehouse and would be used further by Visualization Tool.
+        loaded_at_field: last_import_date
+        freshness: 
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 36
+            period: hour
+
+  - name: dbt_staging
+    database: data-bootcamp-380922
+    schema: dbt_staging
+    tables:
+      - name: us_stock_names
+        description: Data extracted from Nassdaq in order to get the full name of usa publicly listed companies.

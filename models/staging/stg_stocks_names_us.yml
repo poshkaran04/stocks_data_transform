@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_stocks_names_us
+    description: This is an extracted dataset from NASSDAQ of all the usa stock names and additional details that have gone public. 
+    columns:
+      - name: symbol
+        tests:
+          - unique
+          - not_null
+
+      - name: symbol
+        description: A unique identifier assigned to a publicly traded company's stock. It consists of a series of letters, typically 1-4 characters in length, that are used to represent the company in stock market transactions.
+
+      - name: name
+        description: The official name of a publicly traded company's stock. It is typically a longer name than the stock symbol and may include the company's full name or a more descriptive name of the company's business.
+
+      - name: sector
+        description: A broad classification of a company's business activities. Companies are typically classified into one of 11 sectors, such as healthcare, technology, or energy, based on the nature of their business.
+
+      - name: industry
+        description: A more specific classification of a company's business activities. Industries are subsets of sectors and are based on the specific products or services that a company provides. For example, the technology sector may include industries such as software, hardware, and telecommunications.
+
+  - name: symbol
+    tests:
+      - relationships:
+          to: ref('stg_stocks_data_us')
+          field: stock_symbol

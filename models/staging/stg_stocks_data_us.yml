@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_stocks_data_us
+    description: This is an extracted dataset from Kaggle of all the usa stocks that have gone public. Aim is to eveluate stock data permormance over the span of 10 Years.
+    columns:
+      - name: CONCAT(stock_symbol, date)
+        description: Combination of stock symbol and date should always be unique in order to identify unique row per table.
+        tests:
+          - unique
+          - not_null
+
+      - name: stock_symbol
+        description: A unique identifier assigned to a publicly traded company's stock. It consists of a series of letters, typically 1-4 characters in length, that are used to represent the company in stock market transactions.
+
+      - name: date
+        description: The specific date on which a stock's performance data is recorded. It is typically represented in the format of month-day-year.
+
+      - name: open
+        description: The price at which a stock opened for trading at the beginning of the day's trading session.
+
+      - name: high
+        description: The highest price at which a stock traded during the day.
+
+      - name: low
+        description: The lowest price at which a stock traded during the day.
+          
+      - name: close
+        description: The price at which a stock closed for trading at the end of the day's trading session.
+          
+      - name: volume
+        description: The total number of shares of a stock that were traded during the day. It is a measure of the level of interest in the stock and the amount of buying and selling activity that occurred during the day.

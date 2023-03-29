@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'dbt_us_stocks'
 version: '1.0.0'
 config-version: 2
 
@@ -32,7 +32,24 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      materialized: view
+  dbt_us_stocks:
+    marts: 
+      core:
+        +materialized: table
+
+seeds:
+  dbt_us_stocks:
+    us_stock_names:
+      +column_types:
+        Symbol: string
+        Name: string
+        Last Sale: string
+        Net Change: float
+        Pct Change: string
+        Market Cap: float
+        Country: string
+        IPO Year: integer
+        Volume: integer
+        Sector: string
+        Industry: string
+        
