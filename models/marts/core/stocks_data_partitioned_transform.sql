@@ -17,3 +17,8 @@ select
 
 from stocks_data d
 join stocks_name n on d.stock_symbol = n.symbol
+where sector not in ('Consumer Staples'
+, 'Telecommunications'
+, 'Basic Materials'
+, 'Miscellaneous')
+and date>='2011-01-01'
