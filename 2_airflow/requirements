@@ -1,0 +1,2 @@
+kaggle==1.5.12
+apache-airflow-providers-google
