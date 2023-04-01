@@ -46,5 +46,5 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
     <link>https://www.youtube.com/watch?v=COeMn18qSkY</link>
 <br>
 4. <i>Power BI</i> Go to the Power BI website at https://powerbi.microsoft.com/en-us/ and click on the "Download" button at the top of the page. One can now start using Power BI to create visualizations and dashboards based on their data for <b>free</b>. To get started, import data from cloud service source in our case it is BigQuery. 
-
+<br>
 <b>NOTE:</b>Make sure you follow the folder starutre as I have done.
