@@ -36,3 +36,13 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
 
 5. <b>Power BI</b> - Used to create the final dashboard for the stock data analysis project. Power BI is used to create two charts: a line chart showing day-to-day stock performance and a bar chart showing the top 5 sectors in the USA market. Power BI is also used to create visualizations and provide interactive filtering and slicing of the data.
 
+<b>Reproducibility</b>
+
+1. Make a <i>Google Cloud Platform Project</i> and a <i>Service Account</i> with the roles Storage Admin, Storage Object Admin, and BigQuery Admin. Create a key for the same.
+
+2. Go to the <i>Terraform</i> website at https://www.terraform.io/downloads and download the latest version of Terraform for your operating system. Then follow instructions from <link>https://github.com/DataTalksClub/data-engineering-zoomcamp/tree/main/week_1_basics_n_setup/1_terraform_gcp</link>
+
+3. Setup <i>dbt</i> by following the below youtube links and replicate what I have done in my project.
+<link>https://www.youtube.com/watch?v=COeMn18qSkY</link>
+
+4. <i>Power BI</i> Go to the Power BI website at https://powerbi.microsoft.com/en-us/ and click on the "Download" button at the top of the page. One can now start using Power BI to create visualizations and dashboards based on their data for <b>free</b>. To get started, import data from cloud service source in our case it is BigQuery. 
