@@ -34,7 +34,11 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
 
     By using dbt in this way, the stock data analysis project is able to quickly and efficiently transform and enrich the dataset using SQL code. This provides a structured and organized dataset that is easy to query and analyze, and includes additional information on sectors, stock names, and industries.
 
-5. <b>Power BI</b> - Used to create the final dashboard for the stock data analysis project. Power BI is used to create two charts: a line chart showing day-to-day stock performance and a bar chart showing the top 5 sectors in the USA market. Power BI is also used to create visualizations and provide interactive filtering and slicing of the data.
+5. <b>Power BI</b> - The project's dashboard was created using Power BI and consists of two distinct visuals. The first visual is a line chart that displays the performance of stocks over time. Users have the option to filter the chart based on stock options, and as they do so, the title of the chart dynamically changes to reflect the selected stock option. This allows users to analyze the performance of specific stocks in a more focused manner.
+
+image.png
+
+The second visual on the dashboard provides insights into the top 5 performing sectors where growth is notably high. This visual highlights the sectors that are showing the most significant growth in terms of performance, providing users with valuable information about which sectors are currently performing well in the market. This enables users to quickly identify sectors with high growth potential and make informed investment decisions. Overall, the dashboard in Power BI provides meaningful and dynamic visualizations that allow users to gain insights and make informed decisions based on stock performance and sector analysis.
 
 <b>Reproducibility</b>
 
