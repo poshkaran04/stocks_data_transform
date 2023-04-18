@@ -25,6 +25,14 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
 
     By using GCS in this way, the stock data analysis project is able to store and manage large amounts of raw data in a scalable and cost-effective manner. The use of Airflow and Python scripts streamlines the ETL process, allowing for regular updates to the data and efficient loading into BigQuery. This enables efficient querying and analysis of the data in the next stages of the project.
 
+    The data ingestion process, orchestrated using <b>Apache Airflow</b>, follows a sequence of tasks to extract data from Kaggle API, store it in a local path using Docker, move it to Google Cloud Storage (GCS) as a Data Lake, and then load it into BigQuery.
+
+    The first task, 01_pd_import_kaggle_data.py, extracts data from Kaggle API and uploads it to GCS. This task is composed of four sub-tasks executed sequentially: download_dataset, unzip_dataset, convert_text_to_csv_task, and upload_to_gcs. These tasks ensure that the data is downloaded, unzipped, converted to CSV format, and then uploaded to GCS.
+
+    The second task, 02_pd_load_gcs_to_bigquery.py, loads the data from GCS into BigQuery. This task is composed of two sub-tasks executed sequentially: get_file_list and gcs_to_bq. These tasks ensure that the list of files in GCS is obtained and then the data is loaded into BigQuery.
+
+    By breaking down the data ingestion process into smaller tasks and orchestrating them using Apache Airflow, you can ensure a reliable and scalable data pipeline that moves data seamlessly from Kaggle API to BigQuery for further processing and analysis.
+
 4. <b>dbt</b> - Used to transform the raw stock data into a format that is optimized for analysis. dbt is used to model the data and build a data warehouse in BigQuery, allowing for efficient querying and analysis.
 
     <i>Instructions</i><br>
