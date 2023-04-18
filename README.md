@@ -36,7 +36,7 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
 
 5. <b>Power BI</b> - The project's dashboard was created using Power BI and consists of two distinct visuals. The first visual is a line chart that displays the performance of stocks over time. Users have the option to filter the chart based on stock options, and as they do so, the title of the chart dynamically changes to reflect the selected stock option. This allows users to analyze the performance of specific stocks in a more focused manner.
 
-image.png
+![alt text](https://github.com/poshkaran04/stocks_data_transform/blob/analytic/5_dashboard_powerbi/Image_Stocks_Data_Transaform.JPG)
 
 The second visual on the dashboard provides insights into the top 5 performing sectors where growth is notably high. This visual highlights the sectors that are showing the most significant growth in terms of performance, providing users with valuable information about which sectors are currently performing well in the market. This enables users to quickly identify sectors with high growth potential and make informed investment decisions. Overall, the dashboard in Power BI provides meaningful and dynamic visualizations that allow users to gain insights and make informed decisions based on stock performance and sector analysis.
 
