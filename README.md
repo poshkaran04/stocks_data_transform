@@ -6,7 +6,7 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
 
 <b>Data Architecture Diagram</b>
 
-![alt text](https://github.com/poshkaran04/stocks_data_transform/blob/analytic/2_airflow/Data_Architecture.png)
+![alt text](https://github.com/poshkaran04/stocks_data_transform/blob/analytic/2_airflow/Data_Architecture.jpg)
 
 1. <b>Terraform</b> - Used to automate the deployment and management of infrastructure on Google Cloud Platform (GCP), including BigQuery and Google Cloud Storage.
 
