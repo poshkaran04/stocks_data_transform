@@ -3,6 +3,11 @@
 The objective of this project is to analyze complex USA stocks data from 2011 in order to provide an average investor with a better understanding of the stock market. The data is distributed by individual stock names and sectors to provide users with a comprehensive view of the market. The final output is a Power BI dashboard, consisting of two charts: a line chart showing day-to-day stock performance and a bar chart showing the top 5 sectors in the USA market. By analyzing the data in this way, the project aims to provide users with valuable insights that can help inform their investment decisions.
 
 <b>Tools and Technologies used</b>
+
+<b>Data Architecture Diagram</b>
+
+![alt text](https://github.com/poshkaran04/stocks_data_transform/blob/analytic/2_airflow/Data_Architecture.png)
+
 1. <b>Terraform</b> - Used to automate the deployment and management of infrastructure on Google Cloud Platform (GCP), including BigQuery and Google Cloud Storage.
 
     <i>Instructions</i><br>
