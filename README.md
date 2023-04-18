@@ -16,6 +16,12 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
 
 2. <b>GCP</b> (BigQuery and Google Cloud Storage) - Used to store and process large amounts of data for the stock data analysis project. BigQuery is used to store and query the stock data, while Google Cloud Storage is used to store the raw data before it is transformed.
 
+    I have implemented table optimizations in BigQuery for improved performance and efficiency. I have shared the link to the optimized table script on GitHub, specifically in the "3_data_queries_bigquery" folder, with the filename "2_bq_partitioned_clustered_table.sql". This script outlines the steps taken to partition and cluster the data in BigQuery, leveraging its built-in capabilities for organizing and optimizing large datasets.
+
+    By partitioning the data, I have divided it into smaller, more manageable chunks based on a specified column, such as date or stock symbol. This allows for faster and more cost-effective querying of data within a specific partition, as it eliminates the need to scan the entire dataset. Additionally, by clustering the data, I have rearranged it based on its contents, which can improve query performance by minimizing data movement during query execution.
+
+    These optimizations in BigQuery can significantly enhance the efficiency and speed of data retrieval, analysis, and processing, contributing to a more streamlined and optimized workflow for the project.
+
 3. <b>Airflow</b> - Used to orchestrate the ETL (extract, transform, load) pipeline for the stock data analysis project. Airflow is used to schedule and execute the data transformation jobs using dbt.
 
     <i>Instructions</i><br>
