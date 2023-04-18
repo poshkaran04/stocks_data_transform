@@ -16,6 +16,12 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
 
 2. <b>GCP</b> (BigQuery and Google Cloud Storage) - Used to store and process large amounts of data for the stock data analysis project. BigQuery is used to store and query the stock data, while Google Cloud Storage is used to store the raw data before it is transformed.
 
+    I have implemented <b>table optimizations</b> in BigQuery for improved performance and efficiency. I have shared the link to the optimized table script on GitHub, specifically in the "3_data_queries_bigquery" folder, with the filename "2_bq_partitioned_clustered_table.sql". This script outlines the steps taken to partition and cluster the data in BigQuery, leveraging its built-in capabilities for organizing and optimizing large datasets.
+
+    By partitioning the data, I have divided it into smaller, more manageable chunks based on a specified column, such as date or stock symbol. This allows for faster and more cost-effective querying of data within a specific partition, as it eliminates the need to scan the entire dataset. Additionally, by clustering the data, I have rearranged it based on its contents, which can improve query performance by minimizing data movement during query execution.
+
+    These optimizations in BigQuery can significantly enhance the efficiency and speed of data retrieval, analysis, and processing, contributing to a more streamlined and optimized workflow for the project.
+
 3. <b>Airflow</b> - Used to orchestrate the ETL (extract, transform, load) pipeline for the stock data analysis project. Airflow is used to schedule and execute the data transformation jobs using dbt.
 
     <i>Instructions</i><br>
@@ -24,6 +30,14 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
     Once the raw data is stored in GCS, another script is used to load the data into BigQuery using a similar approach. This involves defining a BigQuery table schema and using a Python script to load the data from GCS into the corresponding BigQuery table.
 
     By using GCS in this way, the stock data analysis project is able to store and manage large amounts of raw data in a scalable and cost-effective manner. The use of Airflow and Python scripts streamlines the ETL process, allowing for regular updates to the data and efficient loading into BigQuery. This enables efficient querying and analysis of the data in the next stages of the project.
+
+    The data ingestion process, orchestrated using <b>Apache Airflow</b>, follows a sequence of tasks to extract data from Kaggle API, store it in a local path using Docker, move it to Google Cloud Storage (GCS) as a Data Lake, and then load it into BigQuery.
+
+    The first task, 01_pd_import_kaggle_data.py, extracts data from Kaggle API and uploads it to GCS. This task is composed of four sub-tasks executed sequentially: download_dataset, unzip_dataset, convert_text_to_csv_task, and upload_to_gcs. These tasks ensure that the data is downloaded, unzipped, converted to CSV format, and then uploaded to GCS.
+
+    The second task, 02_pd_load_gcs_to_bigquery.py, loads the data from GCS into BigQuery. This task is composed of two sub-tasks executed sequentially: get_file_list and gcs_to_bq. These tasks ensure that the list of files in GCS is obtained and then the data is loaded into BigQuery.
+
+    By breaking down the data ingestion process into smaller tasks and orchestrating them using Apache Airflow, you can ensure a reliable and scalable data pipeline that moves data seamlessly from Kaggle API to BigQuery for further processing and analysis.
 
 4. <b>dbt</b> - Used to transform the raw stock data into a format that is optimized for analysis. dbt is used to model the data and build a data warehouse in BigQuery, allowing for efficient querying and analysis.
 
@@ -34,7 +48,11 @@ The objective of this project is to analyze complex USA stocks data from 2011 in
 
     By using dbt in this way, the stock data analysis project is able to quickly and efficiently transform and enrich the dataset using SQL code. This provides a structured and organized dataset that is easy to query and analyze, and includes additional information on sectors, stock names, and industries.
 
-5. <b>Power BI</b> - Used to create the final dashboard for the stock data analysis project. Power BI is used to create two charts: a line chart showing day-to-day stock performance and a bar chart showing the top 5 sectors in the USA market. Power BI is also used to create visualizations and provide interactive filtering and slicing of the data.
+5. <b>Power BI</b> - The project's dashboard was created using Power BI and consists of two distinct visuals. The first visual is a line chart that displays the performance of stocks over time. Users have the option to filter the chart based on stock options, and as they do so, the title of the chart dynamically changes to reflect the selected stock option. This allows users to analyze the performance of specific stocks in a more focused manner.
+
+![alt text](https://github.com/poshkaran04/stocks_data_transform/blob/analytic/5_dashboard_powerbi/Image_Stocks_Data_Transaform.JPG)
+
+The second visual on the dashboard provides insights into the top 5 performing sectors where growth is notably high. This visual highlights the sectors that are showing the most significant growth in terms of performance, providing users with valuable information about which sectors are currently performing well in the market. This enables users to quickly identify sectors with high growth potential and make informed investment decisions. Overall, the dashboard in Power BI provides meaningful and dynamic visualizations that allow users to gain insights and make informed decisions based on stock performance and sector analysis.
 
 <b>Reproducibility</b>
 

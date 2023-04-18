@@ -111,7 +111,7 @@ with DAG(
     convert_text_to_csv_task = PythonOperator(
         task_id='convert_text_to_csv',
         python_callable=convert_text_to_csv,
-        op_kwargs={'folder_path': local_folder_path},
+        op_kwargs={'folder_path': LOCAL_FOLDER_PATH},
         dag=dag,
     )
 
